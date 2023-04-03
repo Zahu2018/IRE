@@ -1,0 +1,97 @@
+GRID - like excel
+#geometry, #layout, #grid
+	row/column = 
+	padx/pady = px in jurul widget
+	ipax/ipady = px inside widget
+	sticky = n s e w
+	columnspan/rowspan = 
+	columnconfigure(index(coloana), weight(de cate ori mai mare))
+	columnconfigure(0, weight=3)
+
+PACK - tkinter figure out how to organize widgets
+#geometry, #layout, #pack
+	side = top, bottom, left, right (default=top)(location of widget in window)
+	fill = x, y, both (to fill the parent window)
+	expand = True, False (default=False)(widget to stretch when window expand)
+	anchor = n s e w center, (default=center)(where to place widget in parent)
+	padx, pady = 
+	ipadx, ipady = 
+
+PLACE - pozitia si marimea in legatura cu widget
+#geometry, #layout, #place
+	in_ = specific the master window for widgets
+	x, y = coordinate stanga-sus
+	relx, rely = relative offset horizontal, vertical to the parent (0.0 - 1)
+	relwidth, relheight = relative width, height to the size of parent widget (0.0-1)
+	anchor = n s e v center
+
+MENU
+#menu, #meniu
+w = Menu ( master, option, ... )
+
+activebackground
+	The background color that will appear on a choice when it is under the mouse.
+activeborderwidth
+	Specifies the width of a border drawn around a choice when it is under the mouse. Default is 1 pixel.
+activeforeground
+	The foreground color that will appear on a choice when it is under the mouse.
+bg
+	The background color for choices not under the mouse.
+bd
+	The width of the border around all the choices. Default is 1.
+cursor
+	The cursor that appears when the mouse is over the choices, but only when the menu has been torn off.
+disabledforeground
+	The color of the text for items whose state is DISABLED.
+font
+	The default font for textual choices.
+fg
+	The foreground color used for choices not under the mouse.
+postcommand
+	You can set this option to a procedure, and that procedure will be called every time someone brings up this menu.
+relief
+	The default 3-D effect for menus is relief=RAISED.
+image
+	To display an image on this menubutton.
+selectcolor
+	Specifies the color displayed in checkbuttons and radiobuttons when they are selected.
+tearoff
+	Normally, a menu can be torn off, the first position (position 0) in the list of choices is occupied by the tear-off element, and the additional choices are added starting at position 1. If you set tearoff=0, the menu will not have a tear-off feature, and choices will be added starting at position 0.
+title
+	Normally, the title of a tear-off menu window will be the same as the text of the menubutton or cascade that lead to this menu. If you want to change the title of that window, set the title option to that string.
+
+
+add_command (options)
+	Adds a menu item to the menu.
+add_radiobutton( options )
+	Creates a radio button menu item.
+add_checkbutton( options )
+	Creates a check button menu item.
+add_cascade(options)
+	Creates a new hierarchical menu by associating a given menu to a parent menu
+add_separator()
+	Adds a separator line to the menu.
+add( type, options )
+	Adds a specific type of menu item to the menu.
+delete( startindex [, endindex ])
+	Deletes the menu items ranging from startindex to endindex.
+entryconfig( index, options )
+	Allows you to modify a menu item, which is identified by the index, and change its options.
+index(item)
+	Returns the index number of the given menu item label.
+insert_separator ( index )
+	Insert a new separator at the position specified by index.
+invoke ( index )
+	Calls the command callback associated with the choice at position index. If a checkbutton, its state is toggled between set and cleared; if a radiobutton, that choice is set.
+type ( index )
+	Returns the type of the choice specified by index: either "cascade", "checkbutton", "command", "radiobutton", "separator", or "tearoff".
+	
+TABS
+#tabs
+
+tab_parent = ttk.Notebook(form)
+	tab1 = tk.Frame(tab_parent)
+	tab2 = tk.Frame(tab_parent)
+		tab_parent.add(tab1, text='New')
+		tab_parent.add(tab2, text='Old')
+tab_parent.grid(sticky='news')	
