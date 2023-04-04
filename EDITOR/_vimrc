@@ -1,0 +1,81 @@
+"_vimrc - pt Windows
+".vimrc - pt Linux
+
+"Don't put anything in your .vimrc you don't understand!
+"=======================================================
+"https://learnvimscriptthehardway.stevelosh.com/
+"https://dougblack.io/words/a-good-vimrc.html
+"https://www.freecodecamp.org/news/learn-linux-vim-basic-features-19134461ab85/
+
+
+
+" COLORS
+colorscheme habamax        " awesome colorscheme
+syntax enable              " enable syntax processing; syntax on
+set guifont=Consolas:h11   " setare font
+set encoding=utf-8         " pt consola
+set fileencoding=utf-8     " pt fisiere
+"set guioptions-=m         "menu bar  " Menubar non visible
+set guioptions-=T          "toolbar   " Toolbar non visible
+"set guioptions-=r         "scrollbar " Scrollbar non visible
+
+
+" SESSIONS
+" Automatically save the session when leaving Vim
+autocmd! VimLeave * mksession ! C:\vim\vim90\Session.vim   " ! = OVERVRITE
+" Automatically load the session when starting Vim
+autocmd! VimEnter * source C:\vim\vim90\Session.vim
+
+
+" SPACES & TABS
+filetype indent plugin on
+set tabstop=4       " number of visual spaces per TAB
+set softtabstop=4   " number of spaces in tab when editing
+set expandtab       " tabs are spaces; insert spaces instead tabs
+set shiftwidth=4    " nu stiu ce face
+
+
+" UI CONFIG
+set number              " show line numbers
+set showcmd             " show last command used, in bottom bar right
+set cursorline          " highlight current line
+filetype indent on      " load filetype-specific indent files
+set wildmenu            " visual autocomplete for command menu; " nu merge
+set lazyredraw          " redraw the screen only when we need to.
+set showmatch           " highlight matching [{()}]; see noremap
+
+
+" SEARCH
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
+" set noinchsearch
+" set nohlsearch
+nnoremap <leader><space> :nohlsearch<CR> " turn off search highlight
+" Vim keep hightlighted matches until to new one or command :nohlsearch
+" map it to <space>
+
+
+" FOLDING
+set foldenable          " enable folding
+set foldlevelstart=10   " open most folds by default
+" If it is set to 0, all folds will be closed. Setting it to 99 would guarantee folds are always open. So, setting it to 10 here ensures that only very nested blocks of code are folded when opening a buffer.
+set foldnestmax=10      " 10 nested fold max
+" nnoremap <space> za
+set foldmethod=indent   " fold based on indent level
+" values are marker, manual, expr, syntax, diff. Run :help foldmethod to find out 
+
+
+" PYTHON 
+map <F12> :w<CR>:!python %<CR> " ruleaza scriptul py cu <F12> 
+
+
+" AUTOCLOSE PARANTHESE
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
+
+
