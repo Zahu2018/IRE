@@ -1,0 +1,176 @@
+                              VIM EDITOR
+                              
+        FILE               EDIT
+--------------------------------------
+New          :enew   Undo            u
+Open            :e   Redo           ^R
+Open Tab   :tabnew   Repeat          .
+Split-Open     :sp   Cut           "+x
+Save            :w   Copy          "+y
+Save As...    :sav   Paste        "+gp
+Close       :close   Put Before     [p
+Exit           :qa   Put After      ]p
+					 Delete          x
+					 Select All   ggVG
+					 Find... /
+					 Find and Replace...
+					                             
+                              
+NAVIGATION
+	CHARACTERS
+    	↑ or k = left one char
+    	↓ or j = right one char
+    	← or h = left one char
+    	→ or l = right one char
+    	10j = 10 lines down
+    	
+ 	WORDS
+ 		w = next word at begining
+ 		e = [next] word at end
+ 		b = [next] word at begining
+ 	
+ 	LINES
+ 		          0 = begining of line
+ 		Shift+6 = ^ = begining of line
+ 		Shift+4 = $ = end of line
+ 		Ctrl+e      = scroll page up line by line
+ 	
+ 	PAGES
+ 		gg = move to begining file
+ 		Ctrl+f = page down (forward)
+ 		Ctrl+b = page up (backwards)
+ 		
+ 	FILES
+ 		:20 = jump to begining of line 20
+ 		:0  = jump to begining of file
+ 		:$  = jump to end of file
+ 		
+ 	:jump[s] = jump to the last commands
+ 	::Explore = explorer for folders and files
+ 	:Sexpore = horizontal explorer
+ 	:Vexplore = vertical explorer
+ 	:Texpolore = explorer in new tab
+ 	
+ 	FILE
+ 		NEW
+ 			:ene :enew = edit new unnamed buffer(file)
+ 			:ene! enew! = discharge any changes to the curr buffer
+ 			:tabe :tabedit : tabnew = create new tab
+ 			:split = horizontal split of windows
+ 			:vsplit = vertical split of windows
+ 			
+ 			
+ 		OPEN - TABS	
+ 			:tabe [file] = open a new tab [with a file content]
+ 			:tabedit [file] = open a new tab [with a file content]:
+ 			gt = cyle through tabs
+ 			gT = cyle through tabs
+ 			2gt = go 2 tabs further
+ 			:tabfirst = go to first tab
+ 			:tablast  = go to last tab
+ 			:tabs = list of tabs
+ 			:tabclose = close current tab
+ 			:tabonly = close other tabs except current
+ 			!override = ???
+ 			:source last_session.vim (setted in _vmirc)
+ 	
+	EDIT
+        Esc -> :command in console
+ 	    i       = insert text before cursor
+ 	    Shift+i = insert at the begining of line; before cursor
+ 	    a       = append text after cursor
+ 	    Shift+a = append text at the end of file
+ 	    o       = open new line below cursor line
+ 	    Shift+o = open new line above cursor line
+ 	    r       = replace a single char and return cmd
+ 	    Shift+r = replace char forward; (mode REPLACE)
+ 	    s       = substitute a single char under cursor
+ 	    Shift+s = substitute line where char under cursor
+ 	    cc      = substitute line where char under cursor
+        Shift+c = delete text after cursor and insert new char
+        Shift+j = join line below with space between lines
+        kgJ     = join without a space
+        gJ      = join without a space
+        
+        d← = delete current cursor char and leftwards
+        d$ = delete from currentcursor to end of line
+        s^ = delete from current cursor to first non white char
+        	diw = delete iner word (forward), daw = delete a word (backwards)
+        d0 = delete from current cursor to start of line
+        dw = delete from curent cursor to end of word include space
+        db = delete from curent cursor to begin of word
+        das = delete a sentence
+        dis = delete iner sentence
+        dap = delete a paragraph
+        :t. = duplicate line down
+        :t 7 = duplicate after 7 lines  
+        
+        x = delete char at current cursor
+        Shift+x = X = del previous char from current cursor
+        y = copy single char at current cursor
+        p = paste char after cursor position
+        Shift+p = P = paste char before curent position
+        
+        dw = delete word at current cursor position
+        diw = delete word forward
+        daw = delete word forward
+        3dw = delete 3 words
+        D  = delete line at current cursor position
+        dd = delete entire line
+        Y  = copy entire line
+        yy = copy entire line 
+        
+        u = undo
+        3u = last 3 changes
+        U = undo all
+        Ctrl+r = redo
+        :red = redo   
+        
+        :w = write, save
+        :q = quit vim
+        :wq = write and quit
+        :close = close file
+        :close! = close without saving
+        
+    SEARCH
+    	/phrase = search forward for phrase
+    	?phrase = serach backwards for phrase
+    	// = repeat previous forward search
+    	?? = repeat previous backwards search
+    	n = nest occurence
+    	N = previous occurence
+    	cn = go to next occurence of expresion
+    	cN = go to previous occurence of expresion
+    	// = repeat previous search
+    	* = search next occurence of the word where cursor is
+    	# = search previous occurence of the word where cursor is 
+    	
+    REPLACE
+    	a). /word_to_search <Enter>
+    	b). cgn -> type the replacement word
+    	c). Esc
+    	d). . = aply to new word found (change next)
+    
+    EXIT
+    	:close = close current buffer
+    	:close! = close current buffer with no changes
+    	:q = quit/exit
+    	:qa qall = quit buffers with no changes
+    	
+	HELP
+		:help = manual -> double click on chapte to go there
+		:help w,modes, ... = help on subject
+		:helpgrep <phrase> = when don't know exactly the topics
+		:helpgrep navigation
+		:help text-objects
+		:swapname = name of temporary backup file
+		
+		
+	
+	
+		    
+  	
+    
+ 	
+ 	
+	                                
